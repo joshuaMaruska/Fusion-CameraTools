@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Camera Tools</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="cameraToolsPalette" class="container">
+        <div class="content">
+            <!-- CAMERA TYPE SWITCH (Modal style, no color change) -->
+            <details tabindex="-1">
+                <summary>CAMERA TYPE</summary>
+                <div class="group">
+                    <div class="modal-switch-container" style="margin-left: -10px;">
+                        <span class="modal-switch-label">Orthographic</span>
+                        <input type="checkbox" id="cameraTypeSwitch" class="modal-switch" aria-label="Camera Type">
+                        <span class="slider"></span>
+                        <span class="modal-switch-label" style="margin-left: -10px;">Perspective</span>
+                    </div>
+                </div>
+            </details>
+
+            <!-- POSITIONING SLIDERS -->
+            <details open tabindex="-1">
+                <summary>POSITION</summary>
+                <div class="group">
+                    <div class="slider-group">
+                        <!-- Distance -->
+                        <div class="slider-label-row">
+                            <span class="slider-label">Distance</span>
+                            <span class="placeholder"></span>
+                            <span class="unit-label">cm</span>
+                            <span class="unit-placeholder"></span>
+                        </div>
+                        <div class="slider-row">
+                            <input type="range" id="distance" min="0" max="1000" step="0.01">
+                            <input type="number" class="camera-telemetry-input" id="distanceValue" autocomplete="off"step="0.01">
+                        </div>
+
+                        <!-- Azimuth -->
+                        <div class="slider-label-row">
+                            <span class="slider-label">Azimuth</span>
+                            <span class="placeholder"></span>
+
+                            <span class="unit-label">deg</span>
+                            <span class="unit-placeholder"></span>
+                        </div>
+                        <div class="slider-row">
+                            <input type="range" id="azimuth" min="-180" max="180" step="0.01">
+                            <input type="number" class="camera-telemetry-input" id="azimuthValue" autocomplete="off"step="0.01">
+                        </div>
+
+                        <!-- Inclination -->
+                        <div class="slider-label-row">
+                            <span class="slider-label">Inclination</span>
+                            <span class="placeholder"></span>
+                            <span class="unit-label">deg</span>
+                            <span class="unit-placeholder"></span>
+                        </div>
+                        <div class="slider-row">
+                            <input type="range" id="inclination" min="-90" max="90" step="0.01">
+                            <input type="number" class="camera-telemetry-input" id="inclinationValue" autocomplete="off" step="0.01">
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details tabindex="-1">
+                <summary>ADVANCED</summary>
+                <div class="group">
+                        <div class="eye-level-lock-group"
+                        style="display: flex; align-items: center; gap: 10px; margin-top: 10px;">
+                        <input type="checkbox" id="lockEyeLevelToggle" class="switch-toggle"
+                            aria-label="Lock Eye-level">
+                        <label for="lockEyeLevelToggle" style="margin: 0 8px 0 0;">Lock</label>
+                        <span class="placeholder"></span>
+                        <span class="slider-label">Eye-level</span>
+                        <span class="unit-label">cm</span>
+                        <input type="number" class="camera-telemetry-input" id="eyeLevelValue" autocomplete="off" step="0.01">
+                    </div>
+                    <div class="button-group">
+                        <button id="setTarget">Set Target</button>
+                        <button id="setEye">Set Eye</button>
+                    </div>
+                    <div class="slider-group">
+                        <!-- Dolly -->
+                        <div class="slider-label-row">
+                            <span class="slider-label">Dolly</span>
+                            <span class="placeholder"></span>
+                            <span class="unit-label">cm</span>
+                            <span class="unit-placeholder"></span>
+                        </div>
+                        <div class="slider-row">
+                            <input type="range" id="dollySlider" min="0" max="1000" step="0.01">
+                            <input type="number" class="camera-telemetry-input" id="dollyValue" autocomplete="off" step="0.01">
+                        </div>
+                        <!-- Pan -->
+                        <div class="slider-label-row">
+                            <span class="slider-label">Pan</span>
+                            <span class="placeholder"></span>
+                            <span class="unit-label">deg</span>
+                            <span class="unit-placeholder"></span>
+                        </div>
+                        <div class="slider-row">
+                            <input type="range" id="panSlider" min="-180" max="180" step="0.01">
+                            <input type="number" class="camera-telemetry-input" id="panValue" autocomplete="off" step="0.01">
+                        </div>
+                        <!-- Tilt -->
+                        <div class="slider-label-row">
+                            <span class="slider-label">Tilt</span>
+                            <span class="placeholder"></span>
+                            <span class="unit-label">deg</span>
+                            <span class="unit-placeholder"></span>
+                        </div>
+                        <div class="slider-row">
+                            <input type="range" id="tiltSlider" min="-90" max="90" step="0.01">
+                            <input type="number" class="camera-telemetry-input" id="tiltValue" autocomplete="off" step="0.01">
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- LENS SLIDERS -->
+            <details open tabindex="-1">
+                <summary>LENS</summary>
+                <div class="group">
+                    <div class="slider-group">
+                        <!-- Field of View -->
+                        <div class="slider-label-row">
+                            <span class="slider-label">Field of View</span>
+                            <span class="placeholder"></span>
+                            <span class="unit-label">deg</span>
+                            <span class="unit-placeholder"></span>
+                        </div>
+                        <div class="slider-row">
+                            <input type="range" id="fov" min="5" max="135" step="0.01">
+                            <input type="number" class="camera-telemetry-input" id="fovValue" autocomplete="off"step="0.01">
+                        </div>
+
+                        <!-- Focal Length -->
+                        <div class="slider-label-row">
+                            <span class="slider-label">Focal Length</span>
+                            <span class="placeholder"></span>
+                            <span class="unit-label">mm</span>
+                            <span class="unit-placeholder"></span>
+                        </div>
+                        <div class="slider-row">
+                            <input type="range" id="focalLength" min="10" max="400" step="0.01">
+                            <input type="number" class="camera-telemetry-input" id="focalLengthValue" autocomplete="off" min="10" max="400"
+                                step="1">
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <div class="placeholder"></div>
+                        <div class="placeholder"></div>
+                        <button id="fusionDefault">Default Lens</button>
+                    </div>
+                </div>
+            </details>
+
+            <!-- VIEWS -->
+            <details tabindex="-1">
+                <summary>VIEWS</summary>
+                <div class="group">
+                    <div class="button-group">
+                        <button id="copyView" class="icon-button">
+                            <img src="images/viewCopy.svg" alt="Copy View Icon" class="button-icon">
+                            <span>Copy</span>
+                        </button>
+                        <button id="pasteView" class="icon-button">
+                            <img src="images/viewPaste.svg" alt="Paste View Icon" class="button-icon">
+                            <span>Paste</span>
+                        </button>
+                        <button id="saveView" class="icon-button">
+                            <img src="images/viewSave.svg" alt="Save View Icon" class="button-icon">
+                            <span>Save</span>
+                        </button>
+                    </div>
+                    <div class="hig-dropdown" id="namedViewsDropdown">
+                        <button type="button" class="dropdown-btn" aria-haspopup="listbox" aria-expanded="false">
+                            <span id="namedViewsSelected">Select a Named View</span>
+                            <span class="dropdown-arrow"></span>
+                        </button>
+                        <div class="dropdown-list" role="listbox" tabindex="-1">
+                            <div class="dropdown-option" style="pointer-events: auto;" role="option" data-value="" aria-selected="true">Select a Named
+                                View
+                            </div>
+                            <!-- Dynamically populate options here -->
+                            <!-- Example:
+                            <div class="dropdown-option" role="option" data-value="Front">Front</div>
+                            <div class="dropdown-option" role="option" data-value="Top">Top</div>
+                            -->
+                        </div>
+                        <!-- Hidden native select for accessibility/fallback -->
+                        <select id="namedViews" class="custom-dropdown" tabindex="-1" aria-hidden="true"
+                            style="display:none;">
+                            <option value="" disabled selected>Select a Named View</option>
+                            <!-- Dynamically populate options here -->
+                        </select>
+                    </div>
+                    <div class="button-group">
+                        <button id="fitToView">Fit to View</button>
+                        <button id="resetView">Restore View</button>
+                    </div>
+                </div>
+            </details>
+
+            <!-- OVERLAYS -->
+            <details tabindex="-1">
+                <summary>OVERLAYS</summary>
+                <div class="group">
+                    <div class="dropdown-group">
+                        <label for="aspectRatioDropdown">Aspect Ratio Boundary</label>
+                        <div class="dropdown-container">
+                            <div class="hig-dropdown" id="aspectRatioDropdownContainer">
+                                <button type="button" class="dropdown-btn" aria-haspopup="listbox"
+                                    aria-expanded="false">
+                                    <span id="aspectRatioSelected">Current View (none)</span>
+                                    <span class="dropdown-arrow"></span>
+                                </button>
+                                <div class="dropdown-list" role="listbox" tabindex="-1">
+                                    <div class="dropdown-option" role="option" data-value="default"
+                                        aria-selected="true">Current
+                                        View (none)</div>
+                                    <div class="dropdown-option" role="option" data-value="16:9">16:9</div>
+                                    <div class="dropdown-option" role="option" data-value="4:3">4:3</div>
+                                    <div class="dropdown-option" role="option" data-value="1:1">1:1</div>
+                                </div>
+                                <!-- Hidden native select for accessibility/fallback -->
+                                <select id="aspectRatioDropdown" class="custom-dropdown" tabindex="-1"
+                                    aria-hidden="true" style="display:none;">
+                                    <option value="default" selected>Current View</option>
+                                    <option value="16:9">16:9</option>
+                                    <option value="4:3">4:3</option>
+                                    <option value="1:1">1:1</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <label>Grids</label>
+                    <div>
+                        <div>
+                            <div class="switches">
+                                <label class="switch">
+                                    <img src="images/gridsHalves.svg" alt="Halves Grid Icon" class="switch-icon">
+                                    <input type="checkbox" id="toggleHalves" class="switch-toggle"
+                                        aria-label="Halves Grid">
+                                    <span>Halves</span>
+                                </label>
+                                <label class="switch">
+                                    <img src="images/gridsThirds.svg" alt="Thirds Grid Icon" class="switch-icon">
+                                    <input type="checkbox" id="toggleThirds" class="switch-toggle"
+                                        aria-label="Thirds Grid">
+                                    <span>Thirds</span>
+                                </label>
+                                <label class="switch">
+                                    <img src="images/gridsQuarters.svg" alt="Quarters Grid Icon" class="switch-icon">
+                                    <input type="checkbox" id="toggleQuarters" class="switch-toggle"
+                                        aria-label="Quarters Grid">
+                                    <span>Quarters</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="container">
+                <div class="button-group">
+                    <div class="placeholder">
+                        <!-- DARK MODE TOGGLE (ON/OFF style, highlight when ON) -->
+                        <div class="modal-switch-container" style="margin-left: 10px;">
+                            <img src="images/uiLight.svg" alt="Light Mode Icon" class="modal-switch-icon">
+                            <input type="checkbox" id="toggleDarkModeSwitch" class="switch-toggle"
+                                aria-label="Toggle Dark Mode">
+                            <span class="slider"></span>
+                            <img src="images/uiDark.svg" alt="Dark Mode Icon" class="modal-switch-icon"
+                                style="margin-left: -10px;">
+                        </div>
+                    </div>
+                    <div class="placeholder"></div>
+                    <button id="closePaletteButton">Close</button>
+                </div>
+                <div class="button-group developer-tool">
+                    <div class="placeholder"></div>
+                    <div class="placeholder"></div>
+                    <button id="htmlTest">HTML Test</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>

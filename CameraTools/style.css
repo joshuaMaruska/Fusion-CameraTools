@@ -1,0 +1,1045 @@
+/* =========================
+   VARIABLES & PALETTE
+   ========================= */
+:root {
+    /* Border Radius */
+    --rad-sm: 4px;
+    --rad-m: 6px;
+    --rad-l: 8px;
+    --rad-xl: 12px;
+
+    /* Overlay Utility Colors */
+    --black-100:   #0000000d;  /* 6% alpha */
+    --black-200:   #0000001a;  /* 10% alpha */
+    --black-300:   #00000033;  /* 20% alpha */
+    --black-400:   #0000004d;  /* 30% alpha */
+    --black-500:   #00000080;  /* 50% alpha */
+    --black-600:   #000000cc;  /* 80% alpha */
+    --black-700:   #000000d9;  /* 85% alpha */
+    --black-800:   #000000e5;  /* 90% alpha */
+    --black-900:   #000000f2;  /* 95% alpha */
+    --black-1000:  #000000;    /* 100% alpha */
+
+    --grey-100:    #f5f5f5;    /* 96% */
+    --grey-200:    #e6e6e6;    /* 90% */
+    --grey-300:    #d9d9d9;    /* 85% */
+    --grey-400:    #b3b3b3;    /* 70% */
+    --grey-500:    #757575;    /* 46% */
+    --grey-600:    #444444;    /* 27% */
+    --grey-700:    #383838;    /* 22% */
+    --grey-800:    #2c2c2c;    /* 17% */
+    --grey-900:    #1e1e1e;    /* 12% */
+    --grey-1000:   #111111;    /* 7% */
+
+    --white-100:   #ffffff0d;  /* 6% alpha */
+    --white-200:   #ffffff1a;  /* 10% alpha */
+    --white-300:   #ffffff33;  /* 20% alpha */
+    --white-400:   #ffffff66;  /* 40% alpha */
+    --white-500:   #ffffffb2;  /* 70% alpha */
+    --white-600:   #ffffffcc;  /* 80% alpha */
+    --white-700:   #ffffffd9;  /* 85% alpha */
+    --white-800:   #ffffffe5;  /* 90% alpha */
+    --white-900:   #fffffff2;  /* 95% alpha */
+    --white-1000:  #ffffff;    /* 100% alpha */
+
+    /* Autodesk HIG Palette */
+
+    /* Primary */
+    --primary-black: #000000;
+    --primary-white: #ffffff;
+    --primary-autodeskBlue-100: #cdeaf7;
+    --primary-autodeskBlue-200: #9bd5ef;
+    --primary-autodeskBlue-300: #6ac0e7;
+    --primary-autodeskBlue-400: #38abdf;
+    --primary-autodeskBlue-500: #0696d7;
+    --primary-autodeskBlue-600: #007fc6;
+    --primary-autodeskBlue-700: #006eaf;
+    --primary-autodeskBlue-800: #074b78;
+    --primary-autodeskBlue-900: #0a324d;
+    --primary-charcoal-100: #eeeeee;
+    --primary-charcoal-200: #dcdcdc;
+    --primary-charcoal-300: #cccccc;
+    --primary-charcoal-400: #bbbbbb;
+    --primary-charcoal-500: #999999;
+    --primary-charcoal-600: #808080;
+    --primary-charcoal-700: #666666;
+    --primary-charcoal-800: #4d4d4d;
+    --primary-charcoal-900: #3c3c3c;
+
+    /* Secondary */
+    --secondary-darkBlue-100: #e1ebf7;
+    --secondary-darkBlue-200: #bcd3ee;
+    --secondary-darkBlue-300: #8babdc;
+    --secondary-darkBlue-400: #5f8bcb;
+    --secondary-darkBlue-500: #3970b9;
+    --secondary-darkBlue-600: #1858a8;
+    --secondary-darkBlue-700: #064285;
+    --secondary-darkBlue-800: #003163;
+    --secondary-darkBlue-900: #0c2c54;
+    --secondary-green-100: #e7f2d9;
+    --secondary-green-200: #cfe4b3;
+    --secondary-green-300: #b7d78c;
+    --secondary-green-400: #9fc966;
+    --secondary-green-500: #87b340;
+    --secondary-green-600: #6a9728;
+    --secondary-green-700: #507b16;
+    --secondary-green-800: #385e08;
+    --secondary-green-900: #234200;
+    --secondary-red-100: #faeded;
+    --secondary-red-200: #f7d6d6;
+    --secondary-red-300: #f9b4b4;
+    --secondary-red-400: #f48686;
+    --secondary-red-500: #eb5555;
+    --secondary-red-600: #dd2222;
+    --secondary-red-700: #af1b1b;
+    --secondary-red-800: #800f0f;
+    --secondary-red-900: #520404;
+    --secondary-turquoise-100: #d6f2ef;
+    --secondary-turquoise-200: #ade4de;
+    --secondary-turquoise-300: #84d7ce;
+    --secondary-turquoise-400: #5bc9bd;
+    --secondary-turquoise-500: #32bcad;
+    --secondary-turquoise-600: #23a597;
+    --secondary-turquoise-700: #168576;
+    --secondary-turquoise-800: #0c665b;
+    --secondary-turquoise-900: #04403d;
+    --secondary-yellowOrange-100: #feecd1;
+    --secondary-yellowOrange-200: #fddaa4;
+    --secondary-yellowOrange-300: #fcc776;
+    --secondary-yellowOrange-400: #fbb549;
+    --secondary-yellowOrange-500: #faa21b;
+    --secondary-yellowOrange-600: #ed8d16;
+    --secondary-yellowOrange-700: #d9730b;
+    --secondary-yellowOrange-800: #bf5808;
+    --secondary-yellowOrange-900: #8c3401;
+
+    /* Tertiary */
+    --tertiary-pink-100: #ffebf5;
+    --tertiary-pink-200: #ffd6eb;
+    --tertiary-pink-300: #ffb8db;
+    --tertiary-pink-400: #ff8cc6;
+    --tertiary-pink-500: #fc56a9;
+    --tertiary-pink-600: #e84396;
+    --tertiary-pink-700: #c72877;
+    --tertiary-pink-800: #991f5c;
+    --tertiary-pink-900: #781848;
+    --tertiary-purple-100: #f4edfd;
+    --tertiary-purple-200: #eadcfd;
+    --tertiary-purple-300: #d5bcf7;
+    --tertiary-purple-400: #c5a1f8;
+    --tertiary-purple-500: #b385f2;
+    --tertiary-purple-600: #a76ef5;
+    --tertiary-purple-700: #8558c5;
+    --tertiary-purple-800: #5f3e8e;
+    --tertiary-purple-900: #482f6b;
+    --tertiary-salmon-100: #ffefec;
+    --tertiary-salmon-200: #fcded9;
+    --tertiary-salmon-300: #ffbeb3;
+    --tertiary-salmon-400: #ff9582;
+    --tertiary-salmon-500: #f26a52;
+    --tertiary-salmon-600: #db5942;
+    --tertiary-salmon-700: #a84a39;
+    --tertiary-salmon-800: #853729;
+    --tertiary-salmon-900: #66251a;
+    --tertiary-slate-100: #e9f0f7;
+    --tertiary-slate-200: #dce7f3;
+    --tertiary-slate-300: #c1cedc;
+    --tertiary-slate-400: #a7bacf;
+    --tertiary-slate-500: #7993b0;
+    --tertiary-slate-600: #6784a6;
+    --tertiary-slate-700: #4b6b8f;
+    --tertiary-slate-800: #354d67;
+    --tertiary-slate-900: #2c3e53;
+
+    /* Surface */
+    --surface-lightGray-100: #ffffff;
+    --surface-lightGray-200: #f5f5f5;
+    --surface-lightGray-250: #eeeeee;
+    --surface-lightGray-300: #d9d9d9;
+    --surface-lightGray-350: #cccccc;
+    /* -- */
+    --surface-darkBlue-100: #454f61;
+    --surface-darkBlue-200: #3b4453;
+    --surface-darkBlue-250: #2e3440;
+    --surface-darkBlue-300: #222933;
+    --surface-darkBlue-350: #1a1f25;
+    /* -- */
+    --surface-darkGray-100: #535353;
+    --surface-darkGray-200: #474747;
+    --surface-darkGray-250: #373737;
+    --surface-darkGray-300: #2a2a2a;
+    --surface-darkGray-350: #202020;
+
+    /* Status */
+    --success: #87b340;
+    --warning: #faa21b;
+    --error: #ec4a41;
+
+    /* App Color Assignments (Light) */
+    --color-body: var(--surface-lightGray-200);
+    --color-group: var(--surface-lightGray-250);
+    --color-group-transparent: var(--surface-lightGray-250);
+    --color-background-default: var(--surface-lightGray-200);
+    --color-text-default: var(--grey-800);
+    --color-border-default: var(--grey-400);
+    --color-background-hover: var(--grey-300);
+    --color-text-hover: var(--grey-800);
+    --color-border-hover: var(--grey-700);
+    --color-background-active: var(--grey-500);
+    --color-text-active: var(--white-1000);
+    --color-border-active: var(--grey-700);
+    --color-background-disabled: var(--grey-100);
+    --color-text-disabled: var(--grey-500);
+    --color-border-disabled: var(--grey-300);
+    --color-text-label: var(--grey-700);
+    --color-text-summary: var(--grey-500);
+    --color-graphic-background: var(--surface-lightGray-300);
+    --color-graphic-background-hover: var(--surface-lightGray-350);
+    --color-graphic-background-disabled: var(--surface-lightGray-350);
+    --color-graphic-foreground: var(--surface-lightGray-200);
+    --color-graphic-foreground-disabled: var(--surface-lightGray-250);
+    --color-highlight: var(--primary-autodeskBlue-300);
+    --color-toggle: var(--primary-autodeskBlue-300);
+    --color-accent: var(--grey-700);
+}
+
+.dark-mode {
+    /* App Color Assignments (Dark) */
+    --color-body: var(--surface-darkBlue-350);
+    --color-group: var(--surface-darkBlue-300);
+    --color-group-transparent: var(--surface-darkBlue-300);
+    --color-background-default: var(--surface-darkBlue-350);
+    --color-text-default: var(--grey-300);
+    --color-border-default: var(--surface-darkBlue-250);
+    --color-background-hover: var(--surface-darkBlue-250);
+    --color-text-hover: var(--grey-100);
+    --color-border-hover: var(--surface-darkBlue-100);
+    --color-background-active: var(--surface-darkBlue-300);
+    --color-text-active: var(--white-1000);
+    --color-border-active: var(--grey-600);
+    --color-background-disabled: var(--surface-darkBlue-350);
+    --color-text-disabled: var(--surface-darkBlue-200);
+    --color-border-disabled: var(--surface-darkBlue-250);
+    --color-text-label: var(--grey-300);
+    --color-text-summary: var(--grey-400);
+    --color-graphic-background: var(--surface-darkBlue-350);
+    --color-graphic-background-hover: var(--surface-darkBlue-350);
+    --color-graphic-background-disabled: var(--surface-darkBlue-300);
+    --color-graphic-foreground: var(--surface-darkBlue-200);
+    --color-graphic-foreground-disabled: var(--surface-darkBlue-200);
+    --color-highlight: var(--primary-autodeskBlue-600);
+    --color-toggle: var(--secondary-yellowOrange-800);
+    --color-accent: var(--secondary-yellowOrange-400);
+}
+
+
+
+/* =========================
+   BASE & TYPOGRAPHY
+   ========================= */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+html {
+    box-sizing: border-box;
+    overflow-y: auto;
+    background-color: transparent;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--color-body);
+    font-size: 11px;
+}
+
+label, .modal-switch-label {
+    display: block;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 100;
+    color: var(--color-text-label);
+    margin: 0;
+}
+
+span, .slider-label {
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--color-text-label);
+}
+
+.unit-label {
+    color: var(--color-accent);
+    font-weight: normal;
+    opacity: 0.6;
+    white-space: nowrap;
+}
+
+/* =========================
+   LAYOUT
+   ========================= */
+.container {
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    margin: 10px 10px -10px 10px;
+}
+.content {
+    padding-bottom: 20px;
+    overflow-y: overlay;
+    height: calc(100vh - 50px);
+    padding-right: 15px;
+    margin-right: -15px;
+    box-sizing: border-box;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-body);
+    border-top: 1px solid var(--color-border-default);
+    text-align: center;
+    margin: 0;
+    z-index: 1000;
+}
+.group {
+    background-color: transparent;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: var(--rad-l);
+}
+.group p {
+    margin: 0;
+    padding-bottom: 10px;
+}
+.placeholder {
+    flex: 1;
+}
+.eye-level-lock-group {
+    margin-bottom: 10px;
+}
+
+/* =========================
+   SCROLLBAR
+   ========================= */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-graphic-background);
+    border-radius: 2.5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-graphic-background-hover);
+}
+
+/* =========================
+   INPUTS & FORMS
+   ========================= */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 6px;
+    box-sizing: border-box;
+    border: 1px solid var(--color-border-default);
+    font-size: 11px;
+    border-radius: var(--rad-sm);
+    background-color: transparent;
+    color: var(--color-text-default);
+}
+input[type="text"]::selection,
+input[type="number"]::selection {
+    background: var(--color-highlight);
+    color: var(--color-background-default);
+}
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: var(--color-border-default);
+    outline: none;
+}
+
+input[type="text"]:hover,
+input[type="number"]:hover,
+input[type="number"].camera-telemetry-input:hover {
+    background-color: var(--black-200);
+}
+
+.input-textBox {
+    padding: 10px;
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--rad-sm);
+}
+.input-group, .input-group-inline {
+    margin-bottom: 10px;
+}
+.input-group-inline {
+    display: flex;
+    align-items: center;
+}
+.input-group-inline input[type="text"],
+.input-group-inline input[type="number"] {
+    flex: 1;
+    margin-right: 5px;
+}
+.input-group-inline button {
+    width: auto;
+    padding: 5px;
+}
+.add-button {
+    width: 100px;
+}
+
+
+/* =========================
+   CAMERA TELEMETRY INPUTS
+   ========================= */
+input[type="number"].camera-telemetry-input {
+    width: 70px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: var(--color-group);
+    font-size: 14px;
+    color: var(--color-text-default);
+    border: none;
+    border-radius: var(--rad-sm);
+    padding: 4px 8px;
+    text-align: right;
+}
+
+input[type="number"].camera-telemetry-input::selection {
+    background: var(--color-highlight);
+    color: var(--color-text-active);
+    border-color: var(--color-highlight);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-highlight);
+}
+
+/* Hide spin buttons for number inputs in telemetry */
+input[type="number"].camera-telemetry-input::-webkit-outer-spin-button,
+input[type="number"].camera-telemetry-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type="number"].camera-telemetry-input {
+    -webkit-user-select: all;
+    user-select: all;
+}
+
+.camera-telemetry-input:disabled {
+    background: var(--color-background-disabled, #f0f0f0);
+    color: var(--color-text-disabled, #aaa);
+    cursor: not-allowed;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.button-group button {
+    flex: 1;
+}
+div.button-group.developer-tool {
+    display: none;
+}
+.button {
+    transition: background-color 0.3s, border-color 0.3s;
+}
+button {
+    width: 100%;
+    padding: 5px;
+    background-color: var(--color-background-default);
+    color: var(--color-text-default);
+    border: 1px solid var(--color-border-default);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    border-radius: var(--rad-sm);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+button:not(:disabled):hover {
+    background-color: var(--color-background-hover);
+    color: var(--color-text-hover);
+    border: 1px solid var(--color-border-default);
+}
+button:not(:disabled):active {
+    background-color: var(--color-background-active);
+    color: var(--color-text-active);
+    border: 1px solid var(--color-border-active);
+}
+button:disabled {
+    background-color: var(--color-background-disabled);
+    color: var(--color-text-disabled);
+    cursor: not-allowed;
+    border: 1px solid var(--color-border-disabled);
+    opacity: 0.4;
+}
+.icon-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: transparent;
+    color: var(--color-text-default);
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    border-radius: var(--rad-xl);
+    text-align: center;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.icon-button img.button-icon {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 4px;
+}
+.icon-button:hover {
+    background-color: var(--color-background-hover);
+    border-color: var(--color-border-hover);
+}
+.icon-button:active {
+    background-color: var(--color-background-active);
+    border-color: var(--color-border-active);
+    color: var(--color-text-active);
+}
+.icon-button:disabled {
+    background-color: var(--color-background-disabled);
+    border-color: var(--color-border-disabled);
+    color: var(--color-text-disabled);
+}
+
+#closePaletteButton {
+margin-right: 8px;
+}
+
+/* =========================
+   RANGE SLIDERS
+   ========================= */
+.slider-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.slider-group label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 10px;
+}
+.slider-container {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+}
+input[type="range"] {
+    flex: 1;
+    margin-right: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--color-graphic-background);
+    border: 1px solid var(--color-graphic-background);
+    border-radius: 7px;
+    height: 16px;
+    transition: background 0.3s, border-color 0.3s;
+}
+input[type="range"]:focus {
+    outline: none;
+    background: var(--color-graphic-background-hover);
+    border: 1px solid var(--color-graphic-background-hover);
+}
+input[type="range"]:not(:disabled):hover {
+    background: var(--color-graphic-background-hover);
+    border: 1px solid var(--color-graphic-background-hover);
+}
+input[type="range"]:disabled {
+    background: var(--color-background-default);
+    border: 1px solid var(--color-graphic-background-disabled);
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+input[type="range"]:disabled::-webkit-slider-thumb {
+    background: var(--color-graphic-foreground-disabled);
+    border: 1px solid var(--color-graphic-background);
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 12px;
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    background: var(--color-graphic-foreground);
+    margin-top: 0px;
+    transition: background 0.3s, border-color 0.3s;
+}
+input[type="range"]:focus::-webkit-slider-thumb {
+    background: var(--color-graphic-foreground);
+    border: 1px solid var(--color-border-default);
+}
+input[type="range"]:not(:disabled):hover::-webkit-slider-thumb {
+    background: var(--white-1000);
+    border: 1px solid var(--color-border-hover);
+}
+input[type="range"]:disabled::-webkit-slider-thumb {
+    background: var(--color-graphic-foreground-disabled);
+    border: 1px solid var(--color-graphic-background);
+}
+
+.slider-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    margin-bottom: 4px;
+    text-indent: 5px;
+}
+
+.slider-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.slider-row input[type="range"] {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.unit-placeholder {
+    display: inline-block;
+    width: 82px; /* Match your .camera-telemetry-input width */
+    height: 1px;
+    content: "";
+}
+
+
+/* =========================
+   DROPDOWNS
+   ========================= */
+.dropdown-group,
+.named-views-group,
+.test-button-group {
+    margin-bottom: 15px;
+}
+.dropdown-group label,
+.named-views-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.dropdown-container {
+    position: relative;
+    width: 100%;
+    height: 40px;
+}
+.custom-dropdown {
+    width: calc(100% - 12px);
+    position: absolute;
+    right: 0;
+    margin-top: -10px;
+}
+
+/* Add more space below dropdown labels */
+.dropdown-group label,
+.named-views-group label {
+    display: block;
+    margin-bottom: 14px; /* Increased from 5px */
+}
+
+/* =========================
+   CUSTOM DROPDOWN
+   ========================= */
+
+/* Dropdown wrapper */
+.hig-dropdown {
+    position: relative;
+    width: 100%;
+    min-width: 120px;
+    max-width: 260px;
+    margin-bottom: 20px;
+}
+
+/* Native select, visually hidden but accessible */
+.hig-dropdown select {
+    display: none !important;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    left: 0; top: 0;
+    z-index: 1;
+    
+}
+
+.hig-dropdown select {
+    display: none !important;
+}
+
+/* Custom button */
+.hig-dropdown .dropdown-btn {
+    width: 100%; /* override */
+    padding: 0 12px; /* override */
+    background: transparent; /* override */
+    color: var(--color-text-default); /* override */
+    border: none; /* override */
+    border-bottom: 1px solid var(--color-border-default); /* override */
+    border-radius: 0; /* override */
+    font-size: 13px; /* override */
+    font-family: inherit; /* keep */
+    cursor: pointer; /* keep */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+    position: relative;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+
+.hig-dropdown .dropdown-btn:hover {
+    background: transparent !important;
+    color: var(--color-text-default) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--color-border-default) !important;
+    border-radius: 0 !important;
+    /* Only the underline should appear, not a background */
+}
+
+/* Arrow */
+.hig-dropdown .dropdown-arrow {
+    width: 12px;
+    height: 6px;
+    background: url('images/arrow.svg') no-repeat center center;
+    background-size: contain;
+    margin-left: 8px;
+    opacity: 0.7;
+}
+
+/* Hover underline effect */
+.hig-dropdown .dropdown-btn:hover::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -4px;
+    height: 4px;
+    background: var(--color-border-default);
+    opacity: 1;
+    border-radius: 0;
+}
+
+/* Dropdown panel */
+.hig-dropdown .dropdown-list {
+    display: none;
+    position: absolute;    
+    left: 0; right: 0; top: 100%;
+    background: var(--color-background-default);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    z-index: 10;
+    border-radius: 0;
+    margin-top: 2px;
+    padding: 0; /* Remove horizontal padding */
+    width: calc(100% + 24px); /* Full width plus padding*/
+}
+
+/* Highlight border-bottom when dropdown is open */
+.hig-dropdown .dropdown-btn:focus,
+.hig-dropdown.open .dropdown-btn,
+.hig-dropdown.open .dropdown-btn:hover,
+.hig-dropdown.open .dropdown-btn:focus {
+    border-bottom: 1px solid var(--primary-autodeskBlue-400) !important;
+}
+
+.hig-dropdown.open .dropdown-list {
+    display: block;
+}
+
+.dropdown-option *,
+.dropdown-btn span {
+    pointer-events: none;
+}
+
+/* Dropdown options */
+.hig-dropdown .dropdown-option {
+    height: 32px;
+    line-height: 32px;
+    padding: 0;
+    text-indent: 12px;
+    text-align: left;
+    cursor: pointer;
+    color: var(--color-text-default);
+    background: var(--color-background-default);
+    border: none;
+    font-size: 13px;
+    transition: background 0.2s;
+}
+
+.hig-dropdown .dropdown-option:hover {
+    background: var(--color-background-hover);
+
+}
+
+.hig-dropdown .dropdown-option.selected,
+.hig-dropdown .dropdown-option:active {
+    background: var(--color-background-active);
+    color: var(--color-text-active);
+}
+
+/* =========================
+   SWITCHES & TOGGLES
+   ========================= */
+
+/* --- Base styles for all custom switches (track) --- */
+input[type=checkbox].switch,
+input[type=checkbox].switch-toggle,
+input[type=checkbox].modal-switch {
+    /* Remove default browser appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Track dimensions and shape */
+    width: 38px;
+    height: 19px;
+    border-radius: 11px;
+    border: 1px solid var(--color-border-default);
+    background: var(--color-background-default);
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+}
+
+/* --- Switch thumb (the sliding circle) --- */
+input[type=checkbox].switch:after,
+input[type=checkbox].switch-toggle:after,
+input[type=checkbox].modal-switch:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--color-background-default);
+    /* The thumb will slide horizontally using transform */
+    transform: translateX(var(--x, 0));
+    transition: background 0.3s, transform 0.3s;
+}
+
+/* --- ON/OFF Switch: track and thumb color when checked --- */
+input[type=checkbox].switch-toggle:checked {
+    background: var(--color-toggle); /* Track color when ON */
+    border-color: var(--color-border-default);
+}
+input[type=checkbox].switch-toggle {
+    background: var(--color-graphic-background); /* Track color when OFF */
+    border-color: var(--color-border-default);
+}
+input[type=checkbox].switch-toggle:after {
+    background: var(--color-graphic-foreground); /* Thumb color when OFF */
+}
+input[type=checkbox].switch-toggle:checked:after {
+    --x: 19px; /* Move thumb to the right */
+    background: var(--color-body); /* Thumb color when ON */
+}
+
+/* --- Modal Switch: track and thumb do not change color when checked --- */
+input[type=checkbox].modal-switch:checked,
+input[type=checkbox].modal-switch:not(:checked) {
+    background: var(--color-graphic-background); /* Track stays the same */
+    border-color: var(--color-border-default);
+}
+input[type=checkbox].modal-switch:checked:after,
+input[type=checkbox].modal-switch:not(:checked):after {
+    background: var(--color-graphic-foreground); /* Thumb stays the same */
+}
+input[type=checkbox].modal-switch:checked:after {
+    --x: 19px; /* Move thumb to the right */
+}
+
+/* --- Disabled state for all switches --- */
+/* Disabled state for switch/track */
+input[type=checkbox].switch:disabled,
+input[type=checkbox].switch-toggle:disabled,
+input[type=checkbox].modal-switch:disabled {
+    background: var(--color-background-default);
+    border: none;
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+/* Disabled state for switch/thumb */
+input[type=checkbox].switch:disabled:checked,
+input[type=checkbox].switch-toggle:disabled:checked,
+input[type=checkbox].modal-switch:disabled:checked {
+    background: var(--color-graphic-foreground-disabled);
+    border: none;
+}
+/* Disabled state for switch/thumb */
+input[type=checkbox].switch:disabled:checked,
+input[type=checkbox].switch-toggle:disabled:checked,
+input[type=checkbox].modal-switch:disabled:checked {
+    background: var(--color-graphic-foreground-disabled);
+    border: none;
+}
+/* Disabled state for switch/thumb AFTER */
+input[type=checkbox].switch:disabled:after,
+input[type=checkbox].switch-toggle:disabled:after,
+input[type=checkbox].modal-switch:disabled:after {
+    background: var(--color-graphic-foreground-disabled);
+    border: none;
+}
+/* Disabled state for switch label */
+input[type=checkbox].switch:disabled+label,
+input[type=checkbox].switch-toggle:disabled+label,
+input[type=checkbox].modal-switch:disabled+label {
+    cursor: not-allowed;
+    opacity: 0.4;;
+}
+
+/* --- Hover state for all switches (track border highlight) --- */
+input[type=checkbox].switch:hover:not(:checked):not(:disabled),
+input[type=checkbox].switch-toggle:hover:not(:checked):not(:disabled),
+input[type=checkbox].modal-switch:hover:not(:checked):not(:disabled) {
+    border-color: var(--color-border-hover);
+}
+input[type=checkbox].modal-switch:hover:not(:disabled) {
+    border-color: var(--color-border-hover);
+}
+
+/* --- Focus state for all switches (track shadow) --- */
+input[type=checkbox].switch:focus,
+input[type=checkbox].switch-toggle:focus,
+input[type=checkbox].modal-switch:focus {
+    box-shadow: 0 0 0 var(--focus);
+}
+
+/* --- Switch label styling --- */
+.switches {
+    display: flex;
+    justify-content: space-between;
+    gap: 13px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.switch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.switch img.switch-icon {
+    width: 38px;
+    height: 38px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    transition: opacity 0.3s;
+}
+.switch input[type="checkbox"] {
+    margin-bottom: 5px;
+}
+.switch span {
+    text-align: center;
+}
+.switch input[type="checkbox"]:not(:checked)+.switch-icon {
+    opacity: 0.5;
+}
+
+/* --- Modal switch container and label --- */
+.modal-switch-container {
+    display: flex;
+    gap: 10px;
+    height: 21px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+}
+.modal-switch-label {
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 100;
+    color: var(--color-text-label);
+}
+.modal-switch-icon {
+    width: 17px;
+    height: 17px;
+    vertical-align: middle;
+}
+
+/* =========================
+   DISCLOSURE (DETAILS/SUMMARY)
+   ========================= */
+summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--color-text-summary);
+    cursor: pointer;
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+summary::after {
+    content: '';
+    width: 12px;
+    height: 6px;
+    background: url('images/arrow.svg') no-repeat;
+    background-size: cover;
+    transition: 0.2s;
+    opacity: 1;
+}
+details {
+    background-color: var(--color-group-transparent);
+    border-radius: var(--rad-l);
+    margin-bottom: 10px;
+}
+details[open] summary {
+    border-radius: var(--rad-l) var(--rad-l) 0 0;
+    border-bottom: 1px solid var(--secondary-red-600);
+}
+details[open]>summary::after {
+    transform: rotate(180deg);
+}
+
+/* =========================
+   LISTS
+   ========================= */
+ul {
+    margin: 12px;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    max-width: 320px;
+}
+ul li {
+    margin: 16px 0;
+    position: relative;
+}
+
