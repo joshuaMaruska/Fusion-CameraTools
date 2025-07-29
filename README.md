@@ -4,6 +4,8 @@
 
 **CameraTools** is a modular Fusion 360 add-in that delivers advanced camera and viewport controls through an interactive palette UI. It empowers users to precisely position, orient, and configure the camera for design, presentation, and documentation workflows. CameraTools integrates seamlessly with Fusion 360, providing intuitive sliders, overlays, and named view management—all without interfering with native navigation.
 
+<img src="https://raw.githubusercontent.com/joshuaMaruska/Fusion-CameraTools/refs/heads/main/images/CameraTools-UI.png"  width=12.5% height=12.5%>
+
 ---
 
 ## Features Breakdown
