@@ -4,7 +4,7 @@
 
 **CameraTools** is a modular Fusion 360 add-in that delivers advanced camera and viewport controls through an interactive palette UI. It empowers users to precisely position, orient, and configure the camera for design, presentation, and documentation workflows. CameraTools integrates seamlessly with Fusion 360, providing intuitive sliders, overlays, and named view management—all without interfering with native navigation.
 
-<img src="https://raw.githubusercontent.com/joshuaMaruska/Fusion-CameraTools/refs/heads/main/images/CameraTools-UI.png"  width=50% height=50%>
+<img src="https://raw.githubusercontent.com/jmaruska/Fusion-CameraTools/refs/heads/main/images/CameraTools-UI.png" width=100% height=100%>
 
 ---
 
@@ -12,7 +12,7 @@
 
 ### CAMERA TYPE
 
-![Camera Type Screenshot](images/cameratype.png)
+<img src="https://raw.githubusercontent.com/jmaruska/Fusion-CameraTools/refs/heads/main/images/cameratype@2x.png" width= 350px>
 
 - **Orthographic/Perspective Switch:** Instantly toggle between orthographic and perspective camera types for technical or creative views.
 
@@ -20,7 +20,7 @@
 ### POSITION
 These controls closely mimic Fusion 360’s native viewport navigation. They are **target-centric**: the camera orbits, zooms, and tilts around a fixed target point, allowing you to view your model from different angles while keeping the point of interest centered.
 
-![Camera Position Screenshot](images/position.png)
+<img src="https://raw.githubusercontent.com/jmaruska/Fusion-CameraTools/refs/heads/main/images/position@2x.png" width= 350px>
 
 - **Distance:** Move the camera closer or farther from the target point.
 - **Azimuth:** Rotate the camera horizontally around the target.
@@ -30,7 +30,7 @@ These controls closely mimic Fusion 360’s native viewport navigation. They are
 ### ADVANCED
 These controls offer a **camera-centric** approach, reversing the standard Fusion workflow. Instead of moving the camera around a fixed target, tools like Dolly, Pan, and Tilt shift the target itself—changing where the camera is looking. This is especially useful for immersive, first-person navigation inside models (such as architectural walkthroughs), giving you precise control over both the camera’s position and its point of focus.
 
-![Advanced Controls Screenshot](images/advanced.png)
+<img src="https://raw.githubusercontent.com/jmaruska/Fusion-CameraTools/refs/heads/main/images/advanced@2x.png" width= 350px>
 
 - **Lock:** Maintain a consistent vertical camera position, ideal for architectural or human-scale views. Enabling the LOCK feature will also affect the Field of View controls making them function more like a telephoto zoom lens where the camera is static, the field of view opens or closes rather than moving the camera to fit the object.
 - **Eye-Level:** This numeric entry allows you to specify an eye-height. This is set from the origin, so if your model is offset from 0,0,0, you have to factor that in.
@@ -40,7 +40,7 @@ These controls offer a **camera-centric** approach, reversing the standard Fusio
 
 ### LENS
 
-![Lens Controls Screenshot](images/lens.png)
+<img src="https://raw.githubusercontent.com/jmaruska/Fusion-CameraTools/refs/heads/main/images/lens@2x.png" width= 350px>
 
 - **Field of View (FOV):** Adjust the camera's angle for wide or narrow shots.
 - **Focal Length:** Fine-tune perspective effects with a logarithmic slider and numeric input.
@@ -48,7 +48,7 @@ These controls offer a **camera-centric** approach, reversing the standard Fusio
 
 ### VIEWS
 
-![View Controls Screenshot](images/views.png)
+<img src="https://raw.githubusercontent.com/jmaruska/Fusion-CameraTools/refs/heads/main/images/views@2x.png" width= 350px>
 
 - **Copy/Paste View:** Save and restore camera states for repeatable setups.
 - **Named Views:** Create, select, and manage custom camera views for quick recall.
@@ -57,7 +57,7 @@ These controls offer a **camera-centric** approach, reversing the standard Fusio
 
 ### OVERLAYS
 
-![Overlay Controls Screenshot](images/overlays.png)
+<img src="https://raw.githubusercontent.com/jmaruska/Fusion-CameraTools/refs/heads/main/images/overlays@2x.png" width= 350px>
 
 - **Aspect Ratio Guides:** Overlay boundaries for common aspect ratios (Current, 16:9, 4:3, 1:1).
 - **Grid Overlays:** Display halves, thirds, and quarters to aid composition and alignment.
