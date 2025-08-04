@@ -96,6 +96,7 @@ class EyeLevelController:
     def handle_eye_level_value_change(self, data, palette=None):
         """
         Handle eye level value changes from UI.
+        Now only moves the eye, preserving look direction.
         """
         try:
             if isinstance(data, str):
@@ -104,7 +105,7 @@ class EyeLevelController:
             should_snap = data.get('snap', False)
             self._update_eye_level_overlay(eye_level_value)
             if should_snap and eye_level_value != 0.0:
-                self.set_eye_and_target_level(eye_level=eye_level_value, target_level=eye_level_value)
+                self.set_eye_level(eye_level=eye_level_value)  # Only move eye
         except Exception:
             pass
 
@@ -132,9 +133,30 @@ class EyeLevelController:
     # EYE LEVEL OPERATIONS
     # =========================
 
+    def set_eye_level(self, eye_level):
+        """
+        Set eye level only, preserving target position and camera look direction.
+        """
+        try:
+            # Animation toggle
+            if getattr(self, 'animate_eye_level', True):
+                eye_level_utils.animate_eye_level(eye_level=eye_level)
+                self.target_eye_level = eye_level
+                return True
+
+            # Instant update
+            pending_update = {'eyeLevel': eye_level}
+            payload = camera_commands.build_camera_payload(pending_update, app)
+            camera_commands.apply_camera_state(payload, app, apply_mode="ui")
+            self.target_eye_level = eye_level
+            return True
+        except Exception:
+            return False
+
     def set_eye_and_target_level(self, eye_level=None, target_level=None):
         """
-        Set both eye and target to the specified level.
+        Set both eye and target to the specified levels.
+        This is now a separate, explicit function for when you want both to move.
         """
         try:
             # Animation toggle
@@ -144,7 +166,7 @@ class EyeLevelController:
                     self.target_eye_level = eye_level
                 return True
 
-            # Instant update (existing logic)
+            # Instant update
             pending_update = {}
             if eye_level is not None:
                 pending_update['eyeLevel'] = eye_level
@@ -211,7 +233,8 @@ class EyeLevelController:
 
     def check_and_apply_passive_correction(self):
         """
-        Should be called periodically (e.g. from main loop or UI tick) to apply correction after navigation.
+        Apply passive eye level correction after navigation.
+        Only corrects eye position, preserving look direction.
         """
         if not self.lock_enabled:
             return
@@ -222,7 +245,7 @@ class EyeLevelController:
             current_eye_level = eye_level_utils.get_eye_level(camera)
             drift = abs(current_eye_level - self.target_eye_level)
             if drift > self.correction_tolerance:
-                self.set_eye_and_target_level(eye_level=self.target_eye_level, target_level=self.target_eye_level)
+                self.set_eye_level(eye_level=self.target_eye_level)  # Only move eye
             self._last_camera_change = now
 
     # =========================

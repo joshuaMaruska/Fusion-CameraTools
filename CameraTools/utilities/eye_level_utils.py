@@ -40,13 +40,6 @@ def build_target_level_payload(target_level, app):
     """
     return {'targetLevel': target_level}
 
-def build_eye_and_target_level_payload(eye_level, target_level, app):
-    """
-    Build a pending_update dict for both eye and target doc-up levels.
-    Used by controllers to request simultaneous changes.
-    """
-    return {'eyeLevel': eye_level, 'targetLevel': target_level}
-
 # =========================
 # EYE LEVEL READERS
 # =========================
@@ -167,11 +160,10 @@ def easeInOutCubic(t):
         t -= 2
         return (t * t * t + 2) / 2
 
-def animate_eye_and_target_level(eye_level, target_level, duration=0.1, fps=30, palette=None, camera_calculations=None, camera_transforms=None):
+def animate_eye_level(eye_level, duration=0.1, fps=30, palette=None, camera_calculations=None, camera_transforms=None):
     """
-    Animate the camera's eye and target points to the specified levels over a given duration.
-    Uses cubic easing for smooth transitions.
-    Updates the camera and sends telemetry to the UI palette at each step.
+    Animate the camera's eye point to the specified level over a given duration.
+    Target remains unchanged, preserving the camera's look direction.
     """
     if camera_transforms is None:
         from ..utilities import camera_transforms
@@ -181,22 +173,20 @@ def animate_eye_and_target_level(eye_level, target_level, duration=0.1, fps=30, 
     if design is None:
         log_utils.log(app, "❌ No active design/product. Animation aborted.", level='ERROR', module=LOG_MODULE)
         return False
+    
     up_vector = derive_document_up(design)
     start_eye = camera.eye.asVector()
-    start_target = camera.target.asVector()
     start_eye_level = start_eye.dotProduct(up_vector)
-    start_target_level = start_target.dotProduct(up_vector)
     eye_delta = eye_level - start_eye_level
-    target_delta = target_level - start_target_level
     steps = max(1, int(duration * fps / 1000))
     interval = duration / steps
 
     for i in range(steps):
         t = (i + 1) / steps
         eased_t = easeInOutCubic(t)
-        # Interpolate eye and target levels
+        
+        # Interpolate eye level only
         new_eye_level = start_eye_level + eye_delta * eased_t
-        new_target_level = start_target_level + target_delta * eased_t
 
         # Move eye along up vector
         eye_offset = up_vector.copy()
@@ -206,22 +196,13 @@ def animate_eye_and_target_level(eye_level, target_level, duration=0.1, fps=30, 
         new_eye.y += eye_offset.y
         new_eye.z += eye_offset.z
 
-        # Move target along up vector
-        target_offset = up_vector.copy()
-        target_offset.scaleBy(new_target_level - start_target_level)
-        new_target = start_target.copy()
-        new_target.x += target_offset.x
-        new_target.y += target_offset.y
-        new_target.z += target_offset.z
-
-        # Update camera
+        # Update camera (target stays the same)
         camera.eye = adsk.core.Point3D.create(new_eye.x, new_eye.y, new_eye.z)
-        camera.target = adsk.core.Point3D.create(new_target.x, new_target.y, new_target.z)
         app.activeViewport.camera = camera
         app.activeViewport.refresh()
         adsk.doEvents()
         
-        # Send full camera state to UI with real objects
+        # Send camera state to UI
         camera_telemetry.send_camera_state_to_ui(
             palette, app, adsk, camera_calculations, camera_transforms
         )

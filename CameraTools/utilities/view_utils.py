@@ -11,7 +11,7 @@ import traceback
 LOG_MODULE = 'view_utils'
 
 from ..utilities import log_utils
-log_utils.set_module_logging(LOG_MODULE, True)
+log_utils.set_module_logging(LOG_MODULE, False)
 from ..utilities import camera_transforms
 from ..utilities.camera_transforms import derive_document_up
 
